@@ -1,9 +1,7 @@
-import React from 'react'
-// rafce is the shortcut for creating a functional component in React
+import React from 'react';
+
 const App = () => {
-  return (
-    <div className='text-red-500'>App</div>
-  )
+  return <div className="text-red-500">Hello</div>;
 }
 
 export default App
