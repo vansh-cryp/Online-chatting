@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProfilePage = () => {
   return (
-    <div>ProfilePage</div>
+    <div className='bg-red-500'>ProfilePage</div>
   )
 }
 
