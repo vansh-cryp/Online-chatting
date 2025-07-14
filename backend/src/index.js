@@ -3,11 +3,20 @@ import cookieParser from "cookie-parser"
 import authRoutes from "./routes/authRoutes.routes.js"
 import messageRoutes from "./routes/messageRoutes.routes.js"
 import dotenv from "dotenv"
+import cors from "cors"
 import {connetDB} from "./lib/db.js"
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
+
+app.use(cors(
+    {
+        origin :"http://localhost:5173",
+        credentials: true, // Allow cookies to be sent with requests
+
+    }
+));
 
 //middleware to extract json data from body
 app.use(express.json())
