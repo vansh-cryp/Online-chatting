@@ -1,6 +1,6 @@
 import React, {useEffect } from 'react';
 import Navbar from './components/navbar';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes ,Navigate} from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
@@ -27,7 +27,6 @@ if(isCheckingAuth && !authUser) {
   }
   return (
     <div>
-      <Navbar/>
 
       <Routes>
         <Route path="/" element={authUser?<HomePage/>:<Navigate to="/login"/>} />
