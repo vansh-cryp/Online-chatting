@@ -3,7 +3,7 @@ import { axiosInstance } from "../lib/axios";
 //zustand is a state management library for React applications
 
 export const useAuthStore = create((set)=>({
-  user: null,
+  authUser: null,
   isSignedUp: false,
   isLoggingIn: false,
   isUpdatingProfile: false,
