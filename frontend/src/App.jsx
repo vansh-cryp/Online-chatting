@@ -7,14 +7,24 @@ import LoginPage from './pages/LoginPage';
 import SettingsPage from './pages/SettingsPage';
 import  ProfilePage from './pages/ProfilePage';  
 import { useAuthStore } from './store/useAuthStore.js';
+import {Loader} from "lucide-react"
+import './css/loader.css'; // Importing the loader CSS
 const App = () => {
-  const {authUser, checkAuth} = useAuthStore();
+  const {authUser, checkAuth ,isCheckingAuth} = useAuthStore();
 
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
 
   console.log("Auth User:", authUser);
+
+if(true) {
+    return(
+      <div className="Loader">
+        <Loader className="size-10 animate-spin"/>
+      </div>
+    )
+  }
   return (
     <div>
       <Navbar/>
