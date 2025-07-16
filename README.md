@@ -49,5 +49,4 @@ A full-stack online chat application built with React (frontend) and Express/Mon
    ```
    Frontend runs on `http://localhost:3000` by default.
 
-## This README summarizes your project’s structure and workflow. Adjust any section as needed for
 
