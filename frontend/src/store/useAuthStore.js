@@ -1,10 +1,11 @@
 import {create} from "zustand"
 import { axiosInstance } from "../lib/axios";
+import toast from "react-hot-toast";
 //zustand is a state management library for React applications
 
 export const useAuthStore = create((set)=>({
   authUser: null,
-  isSignedUp: false,
+  isSigningUp: false,
   isLoggingIn: false,
   isUpdatingProfile: false,
   isCheckingAuth: true,
@@ -25,6 +26,15 @@ export const useAuthStore = create((set)=>({
   }
 ,
   signup :async(data)=>{
-
+    set({isSigningUp: true});
+    try {
+      const res = await axiosInstance.post("/auth/signup", data);
+      toast.success("Account created successfully");
+      set({authUser: res.data});
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }finally {
+      set({isSigningUp: false});
+    }
   }
 }));
